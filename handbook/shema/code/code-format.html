@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>严格按照要求使用（Eslint,pretter,husky,lint-staged）进行代码格式约束 | Work Doc · LuoRunfeng</title>
+    <meta name="generator" content="VuePress 1.9.5">
+    
+    <meta name="description" content="分享一些前端开发心得，前端最新技术栈，以及项目开发的约束">
+    
+    <link rel="preload" href="/edacCodeConstraints/assets/css/0.styles.de184d0f.css" as="style"><link rel="preload" href="/edacCodeConstraints/assets/js/app.27ff7118.js" as="script"><link rel="preload" href="/edacCodeConstraints/assets/js/3.4a7c7b9d.js" as="script"><link rel="preload" href="/edacCodeConstraints/assets/js/1.1c2defac.js" as="script"><link rel="preload" href="/edacCodeConstraints/assets/js/8.e7a47841.js" as="script"><link rel="prefetch" href="/edacCodeConstraints/assets/js/10.a0d427d2.js"><link rel="prefetch" href="/edacCodeConstraints/assets/js/11.3ebecba0.js"><link rel="prefetch" href="/edacCodeConstraints/assets/js/12.4bc7d3ff.js"><link rel="prefetch" href="/edacCodeConstraints/assets/js/13.725a6907.js"><link rel="prefetch" href="/edacCodeConstraints/assets/js/14.aaf21422.js"><link rel="prefetch" href="/edacCodeConstraints/assets/js/15.e2ca4bad.js"><link rel="prefetch" href="/edacCodeConstraints/assets/js/16.b70a6837.js"><link rel="prefetch" href="/edacCodeConstraints/assets/js/4.566977db.js"><link rel="prefetch" href="/edacCodeConstraints/assets/js/5.ab97d9c2.js"><link rel="prefetch" href="/edacCodeConstraints/assets/js/6.410a37f2.js"><link rel="prefetch" href="/edacCodeConstraints/assets/js/7.e16f513d.js"><link rel="prefetch" href="/edacCodeConstraints/assets/js/9.7de71c4b.js">
+    <link rel="stylesheet" href="/edacCodeConstraints/assets/css/0.styles.de184d0f.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container" data-v-1aefc0b4><div data-v-1aefc0b4><div id="loader-wrapper" class="loading-wrapper" data-v-d48f4d20 data-v-1aefc0b4 data-v-1aefc0b4><div class="loader-main" data-v-d48f4d20><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div></div> <!----> <!----></div> <div class="password-shadow password-wrapper-out" style="display:none;" data-v-25ba6db2 data-v-1aefc0b4 data-v-1aefc0b4><h3 class="title" data-v-25ba6db2 data-v-25ba6db2>Work Doc · LuoRunfeng</h3> <p class="description" data-v-25ba6db2 data-v-25ba6db2>分享一些前端开发心得，前端最新技术栈，以及项目开发的约束</p> <label id="box" class="inputBox" data-v-25ba6db2 data-v-25ba6db2><input type="password" value="" data-v-25ba6db2> <span data-v-25ba6db2>Konck! Knock!</span> <button data-v-25ba6db2>OK</button></label> <div class="footer" data-v-25ba6db2 data-v-25ba6db2><span data-v-25ba6db2><i class="iconfont reco-theme" data-v-25ba6db2></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-25ba6db2>vuePress-theme-reco</a></span> <span data-v-25ba6db2><i class="iconfont reco-copyright" data-v-25ba6db2></i> <a data-v-25ba6db2><!---->
+            
+          <!---->
+          2022
+        </a></span></div></div> <div class="hide" data-v-1aefc0b4><header class="navbar" data-v-1aefc0b4><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/edacCodeConstraints/" class="home-link router-link-active"><!----> <span class="site-name">Work Doc · LuoRunfeng</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/edacCodeConstraints/" class="nav-link"><i class="undefined"></i>
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+       MarkDown
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://markdown.com.cn/editor/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="undefined"></i>
+  在线编辑
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://markdown.com.cn/cheat-sheet.html" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="undefined"></i>
+  语法速查
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-1aefc0b4></div> <aside class="sidebar" data-v-1aefc0b4><div class="personal-info-wrapper" data-v-39576ba9 data-v-1aefc0b4><!----> <!----> <div class="num" data-v-39576ba9><div data-v-39576ba9><h3 data-v-39576ba9>6</h3> <h6 data-v-39576ba9>文章</h6></div> <div data-v-39576ba9><h3 data-v-39576ba9>0</h3> <h6 data-v-39576ba9>标签</h6></div></div> <ul class="social-links" data-v-39576ba9></ul> <hr data-v-39576ba9></div> <nav class="nav-links"><div class="nav-item"><a href="/edacCodeConstraints/" class="nav-link"><i class="undefined"></i>
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+       MarkDown
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://markdown.com.cn/editor/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="undefined"></i>
+  在线编辑
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://markdown.com.cn/cheat-sheet.html" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="undefined"></i>
+  语法速查
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav> <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><a href="/edacCodeConstraints/" class="sidebar-heading clickable router-link-active"><span>Git配置</span> <!----></a> <ul class="sidebar-links sidebar-group-items"><li><a href="/edacCodeConstraints/handbook/git/git-connect-ssh.html" class="sidebar-link">电脑SSH配置</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>代码规范</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/edacCodeConstraints/handbook/shema/code/code-format.html" aria-current="page" class="active sidebar-link">前端代码格式</a></li><li><a href="/edacCodeConstraints/handbook/shema/code/interface-shema.html" class="sidebar-link">前端统一接口</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>命名规范</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/edacCodeConstraints/handbook/shema/name/file-name-schema.html" class="sidebar-link">文件名命名</a></li><li><a href="/edacCodeConstraints/handbook/shema/name/dir-name-schema.html" class="sidebar-link">文件夹命名</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>性能优化</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/edacCodeConstraints/handbook/shema/performance/component-import-method.html" class="sidebar-link">组件库引入方式</a></li></ul></section></li></ul> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-25ba6db2 data-v-1aefc0b4><h3 class="title" data-v-25ba6db2 data-v-25ba6db2>严格按照要求使用（Eslint,pretter,husky,lint-staged）进行代码格式约束</h3> <!----> <label id="box" class="inputBox" data-v-25ba6db2 data-v-25ba6db2><input type="password" value="" data-v-25ba6db2> <span data-v-25ba6db2>Konck! Knock!</span> <button data-v-25ba6db2>OK</button></label> <div class="footer" data-v-25ba6db2 data-v-25ba6db2><span data-v-25ba6db2><i class="iconfont reco-theme" data-v-25ba6db2></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-25ba6db2>vuePress-theme-reco</a></span> <span data-v-25ba6db2><i class="iconfont reco-copyright" data-v-25ba6db2></i> <a data-v-25ba6db2><!---->
+            
+          <!---->
+          2022
+        </a></span></div></div> <div data-v-1aefc0b4><main class="page"><section><div class="page-title"><h1 class="title">严格按照要求使用（Eslint,pretter,husky,lint-staged）进行代码格式约束</h1> <div data-v-f875f3fc><i class="iconfont reco-account" data-v-f875f3fc><span data-v-f875f3fc>罗润峰</span></i> <i class="iconfont reco-date" data-v-f875f3fc><span data-v-f875f3fc>2022/1/13</span></i> <!----> <!----></div></div> <div class="theme-reco-content content__default"><blockquote><p>本文采用了<code>yarn</code>作为包管理器，<code>npm</code>操作类似，搭建一个<code>Vue3</code>+ <code>Vite</code> + <code>typeScript</code> + <code>Eslint</code> + <code>prettier</code> + <code>Husky</code> + <code>Lint-staged</code> 严格进行代码格式化以及提交git前自动审核代码是否过关.</p></blockquote> <h2 id="一-初始化项目"><a href="#一-初始化项目" class="header-anchor">#</a> 一. 初始化项目</h2> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 创建一个空的 vue3-ts 项目,</span>
+yarn create vite my<span class="token operator">-</span>vue<span class="token operator">-</span>app <span class="token operator">--</span>template vue<span class="token operator">-</span>ts
+<span class="token comment">// 安装依赖</span>
+cd my<span class="token operator">-</span>vue<span class="token operator">-</span>app <span class="token operator">&amp;&amp;</span> yarn
+<span class="token comment">// 默认是没有创建git仓库的，这里我们初始化一下</span>
+git init
+</code></pre></div><p><code>注意</code>： 这里git初始化可以使用另外的一个文件夹下初始化，然后拷贝git文件到项目根目录下</p> <h2 id="二-集成eslint"><a href="#二-集成eslint" class="header-anchor">#</a> 二. 集成<code>Eslint</code></h2> <ol><li><p>首先我们安装eslint</p> <div class="language- extra-class"><pre class="language-text"><code>yarn add eslint  -D
+</code></pre></div></li> <li><p>接下来初始化eslint:</p> <div class="language- extra-class"><pre class="language-text"><code>npx eslint --init
+</code></pre></div><p>依次选择这些选项:
+<img src="/edacCodeConstraints/assets/img/stup1.0a35255f.png" alt="这里写图片描述"><br>
+到最后一步时会弹一个这个提示,问是否立即用npm安装这个三个依赖，这里我们选否，并且手动拷贝出来用yarn安装。(<code>别问为啥，问就是npm太慢</code>)</p> <div class="language- extra-class"><pre class="language-text"><code>yarn add eslint-plugin-vue@latest @typescript-eslint/eslint-plugin@latest @typescript-eslint/parser@latest -D
+</code></pre></div></li> <li><p>到这一步，我们就已经安装了相关的依赖了，并且得到一个已配置好的.eslintrc.json文件：</p> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+ <span class="token property">&quot;env&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+     <span class="token property">&quot;browser&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+     <span class="token property">&quot;es2021&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+     <span class="token property">&quot;node&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span>
+ <span class="token punctuation">}</span><span class="token punctuation">,</span>
+ <span class="token property">&quot;extends&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+     <span class="token string">&quot;eslint:recommended&quot;</span><span class="token punctuation">,</span>
+     <span class="token string">&quot;plugin:vue/essential&quot;</span><span class="token punctuation">,</span>
+     <span class="token string">&quot;plugin:@typescript-eslint/recommended&quot;</span>
+ <span class="token punctuation">]</span><span class="token punctuation">,</span>
+ <span class="token property">&quot;parserOptions&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+     <span class="token property">&quot;ecmaVersion&quot;</span><span class="token operator">:</span> <span class="token number">13</span><span class="token punctuation">,</span>
+     <span class="token property">&quot;parser&quot;</span><span class="token operator">:</span> <span class="token string">&quot;@typescript-eslint/parser&quot;</span><span class="token punctuation">,</span>
+     <span class="token property">&quot;sourceType&quot;</span><span class="token operator">:</span> <span class="token string">&quot;module&quot;</span>
+ <span class="token punctuation">}</span><span class="token punctuation">,</span>
+ <span class="token property">&quot;plugins&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+     <span class="token string">&quot;vue&quot;</span><span class="token punctuation">,</span>
+     <span class="token string">&quot;@typescript-eslint&quot;</span>
+ <span class="token punctuation">]</span><span class="token punctuation">,</span>
+ <span class="token property">&quot;rules&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+     <span class="token punctuation">}</span>
+ <span class="token punctuation">}</span>
+</code></pre></div></li> <li><p>然后我们为package.json文件增加一个lint命令，这个命令我们后期将会用来检查我们的代码是否符合Eslint规范，当然这个再后面我们并不会手动去检查，我们将会使用到一个插件<code>Lint-staged</code>会自动给我们审核的，接着往下看</p> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+ <span class="token property">&quot;scripts&quot;</span><span class="token operator">:</span><span class="token punctuation">{</span>
+     <span class="token comment">// lint当前项目中的文件并且开启自动修复</span>
+     <span class="token property">&quot;lint&quot;</span><span class="token operator">:</span> <span class="token string">&quot;eslint . --ext .vue,.js,.ts,.jsx,.tsx --fix&quot;</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div></li> <li><p>一切进行得非常顺利，然而当我们运行lint命令时，会发现不是我们想要的结果
+<img src="/edacCodeConstraints/assets/img/setup2.871b38b5.png" alt="这里写图片描述"> <strong>原因</strong> ：命令行在解析vue文件会报parsing error。这是因为，默认eslint不会解析vue文件，所以我们需要一个额外的解析器来帮我们解析vue文件。<br>
+这一步本来是在我们继承plugin:vue/essential的时候，默认为我们配置了的
+<img src="/edacCodeConstraints/assets/img/setup3.16fe2d21.png" alt="这里写图片描述"><br>
+但是我们后续又extend了<code>&quot;plugin:@typescript-eslint/recommended&quot;</code>,它又继承来自<code>./node_modules/@typescript-eslint/eslint-plugin/dist/configs/base.js</code></p></li></ol> <div class="language-js extra-class"><pre class="language-js"><code> <span class="token string">&quot;use strict&quot;</span><span class="token punctuation">;</span>
+  <span class="token comment">// THIS CODE WAS AUTOMATICALLY GENERATED</span>
+  <span class="token comment">// DO NOT EDIT THIS CODE BY HAND</span>
+  <span class="token comment">// YOU CAN REGENERATE IT USING yarn generate:configs</span>
+  module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+      parser<span class="token operator">:</span> <span class="token string">'@typescript-eslint/parser'</span><span class="token punctuation">,</span>
+      parserOptions<span class="token operator">:</span> <span class="token punctuation">{</span> sourceType<span class="token operator">:</span> <span class="token string">'module'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      plugins<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'@typescript-eslint'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token comment">//# sourceMappingURL=base.js.map</span>
+</code></pre></div><p>而我们在配置文件中的extends顺序是：</p> <div class="language-json extra-class"><pre class="language-json"><code>  <span class="token punctuation">{</span>
+      <span class="token property">&quot;extends&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+          <span class="token string">&quot;eslint:recommended&quot;</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;plugin:vue/essential&quot;</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;plugin:@typescript-eslint/recommended&quot;</span>
+      <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span>
+</code></pre></div><p>所以<code>vue-eslint-parser</code>被<code>@typescript-eslint/parser</code>覆盖了。这里我们只需要将外部的parser改为<code>vue-eslint-parser</code>，并且在<code>parserOptions</code>中添加一个<code>parser:@typescript-eslint/parser</code>属性即可，而这一步我们之前的配置文件里面已经有做了</p> <div class="language-json extra-class"><pre class="language-json"><code> <span class="token punctuation">{</span>
+     ...
+     <span class="token comment">// 新增，解析vue文件</span>
+     <span class="token property">&quot;parser&quot;</span><span class="token operator">:</span><span class="token string">&quot;vue-eslint-parser&quot;</span><span class="token punctuation">,</span>
+     <span class="token property">&quot;parserOptions&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+         <span class="token property">&quot;ecmaVersion&quot;</span><span class="token operator">:</span> <span class="token string">&quot;latest&quot;</span><span class="token punctuation">,</span>
+         <span class="token property">&quot;parser&quot;</span><span class="token operator">:</span> <span class="token string">&quot;@typescript-eslint/parser&quot;</span><span class="token punctuation">,</span>
+         <span class="token property">&quot;sourceType&quot;</span><span class="token operator">:</span> <span class="token string">&quot;module&quot;</span>
+     <span class="token punctuation">}</span><span class="token punctuation">,</span>
+     ...
+ <span class="token punctuation">}</span>
+</code></pre></div><p>两个parser的区别在于，外面的parser用来解析vue文件，使得eslint能解析<code>&lt;template&gt;</code>标签中的内容，而<code>parserOptions</code>中的<code>parser</code>，即<code>@typescript-eslint/parser</code>用来解析vue文件中<code>&lt;script&gt;</code>标签中的代码。</p> <p>接下来我们继续运行 <code>yarn run lint</code>,会发现又报错了：<br> <img src="/edacCodeConstraints/assets/img/setup5.1d6927d1.png" alt="这里写图片描述"><br>
+这里一共报两个问题:</p> <ul><li><code>&lt;template&gt;</code>节点要求有且只有一个根节点</li> <li>找不到<code>defineProps</code>的定义</li></ul> <p>我们知道，这两个特性都是vue3引入的，问题可能出在我们的配置不支持vue3项目，翻阅<code>./node_modules/eslint-plugin-vue</code>目录的相关配置，便可发现问题所在，<code>eslint-plugin-vue</code>提供了几个预设的配置集。</p> <div class="language-js extra-class"><pre class="language-js"><code>configs<span class="token operator">:</span> <span class="token punctuation">{</span>
+  base<span class="token operator">:</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'./configs/base'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  essential<span class="token operator">:</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'./configs/essential'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token string">'no-layout-rules'</span><span class="token operator">:</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'./configs/no-layout-rules'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  recommended<span class="token operator">:</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'./configs/recommended'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token string">'strongly-recommended'</span><span class="token operator">:</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'./configs/strongly-recommended'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token string">'vue3-essential'</span><span class="token operator">:</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'./configs/vue3-essential'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token string">'vue3-recommended'</span><span class="token operator">:</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'./configs/vue3-recommended'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token string">'vue3-strongly-recommended'</span><span class="token operator">:</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'./configs/vue3-strongly-recommended'</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+</code></pre></div><p>没有vue3-前缀的规则集对应vue2项目，vue3-开头的对应vue3项目。而我们默认使用的是 <code>vue/essential</code>这个规则集，由于我们是vue3项目，所以应该使用vue3的规则集，这里使用<code>vue3-recommended</code></p> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+    <span class="token property">&quot;extends&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token string">&quot;eslint:recommended&quot;</span><span class="token punctuation">,</span>
+        -- <span class="token string">&quot;plugin:vue/essential&quot;</span><span class="token punctuation">,</span>
+        ++ <span class="token string">&quot;plugin:vue/vue3-recommended&quot;</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;plugin:@typescript-eslint/recommended&quot;</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>然后再运行,<code>yarn run lint</code>,发现还是会报错。
+<img src="/edacCodeConstraints/assets/img/setup6.43a115fe.png" alt="这里写图片描述"><br>
+因为defineProps是一个全局的预编译宏，eslint不知其定义在哪里，所以需要在global选项中将其标注出来，然而我阅读了<code>eslint-plugin-vue</code>这个文件后，发现它已经预设了。</p> <div class="language-js extra-class"><pre class="language-js"><code>  environments<span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token string">'setup-compiler-macros'</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      globals<span class="token operator">:</span> <span class="token punctuation">{</span>
+        defineProps<span class="token operator">:</span> <span class="token string">'readonly'</span><span class="token punctuation">,</span>
+        defineEmits<span class="token operator">:</span> <span class="token string">'readonly'</span><span class="token punctuation">,</span>
+        defineExpose<span class="token operator">:</span> <span class="token string">'readonly'</span><span class="token punctuation">,</span>
+        withDefaults<span class="token operator">:</span> <span class="token string">'readonly'</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+</code></pre></div><p>我们只需要在env中开启这个环境变量即可：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token punctuation">{</span>
+    <span class="token string">&quot;env&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token string">&quot;browser&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;es2021&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;node&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+        <span class="token comment">// 开启setup语法糖环境</span>
+         <span class="token operator">++</span> <span class="token string">&quot;vue/setup-compiler-macros&quot;</span><span class="token operator">:</span><span class="token boolean">true</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>Ok，到此为止，然后我们再运行yarn run lint,oh 谢天谢地，终于不报错了。</p> <h2 id="三-添加vscode-eslint-插件"><a href="#三-添加vscode-eslint-插件" class="header-anchor">#</a> 三. 添加<code>vscode-eslint</code> 插件</h2> <p>就目前而言，我们能在命令行中使用eslint了，然而写一行代码就去运行下检测脚本实在太麻烦，好在我们可以结合eslint插件使用。<br>
+在vscode中安装好eslint插件,它便会在我们写代码的时候对我们的脚本进行lint，我们就没必要再运行<code>yarn run lint</code> 了。同时，我们可以新建一个<code>.vscode/settings.json</code>文件，为这个本项目开启自动修复</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token punctuation">{</span>
+  <span class="token string">&quot;editor.codeActionsOnSave&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;source.fixAll&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>这样一来，当你按下ctrl + s保存的时候，eslint便会智能地为你修复一些代码错误了。</p> <h2 id="四-集成-prettier"><a href="#四-集成-prettier" class="header-anchor">#</a> 四. 集成 <code>prettier</code></h2> <p>相比 eslint 而言 <code>prettier</code> 就会要温和一些了。 <code>prettier</code> 并没有提供太多的配置选项给我们选择,所以我们在网上随便找一份配置就行。</p> <div class="language-js extra-class"><pre class="language-js"><code>yarn add prettier <span class="token operator">-</span><span class="token constant">D</span>
+</code></pre></div><p>然后再项目根目录添加一份配置文件</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// .`prettier`rc.js</span>
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  printWidth<span class="token operator">:</span> <span class="token number">80</span><span class="token punctuation">,</span> <span class="token comment">//单行长度</span>
+  tabWidth<span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token comment">//缩进长度</span>
+  useTabs<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token comment">//使用空格代替tab缩进</span>
+  semi<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token comment">//句末使用分号</span>
+  singleQuote<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token comment">//使用单引号</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>这是我的配置文件，如果需要更多的配置方法，可以参考 <strong><a href="https://prettier.io/docs/en/options.html" target="_blank" rel="noopener noreferrer">官方的配置文档<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></strong><br>
+然后再package.json中添加一个脚本</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token punctuation">{</span>
+    <span class="token string">&quot;scripts&quot;</span><span class="token operator">:</span><span class="token punctuation">{</span>
+        <span class="token string">&quot;format&quot;</span><span class="token operator">:</span> <span class="token string">&quot;prettier --write ./**/*.{vue,ts,tsx,js,jsx,css,less,scss,json,md}&quot;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>当运行这个命令时，就会将我们项目中的文件都格式化一次。</p> <p>一般而言，我们还需要集成 <code>prettier</code>这个插件来完成自动保存格式化，在插件市场安装好了以后，在我们的<code>.vscode/settings.json</code>中添加如下规则</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token punctuation">{</span>
+   <span class="token string">&quot;editor.formatOnSave&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token comment">// 开启自动保存</span>
+   <span class="token string">&quot;editor.defaultFormatter&quot;</span><span class="token operator">:</span> <span class="token string">&quot;esbenp.prettier-vscode&quot;</span><span class="token punctuation">,</span> <span class="token comment">// 默认格式化工具选择`prettier`</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>这样一来，当我们在vscode写代码的时候，便会自动格式化了。</p> <h2 id="五-解决-eslint-和-prettier-的冲突"><a href="#五-解决-eslint-和-prettier-的冲突" class="header-anchor">#</a> 五. 解决 <code>eslint</code> 和 <code>prettier</code> 的冲突</h2> <ul><li>理想状态下，到这一步我们写代码的时候，eslint 和 <code>prettier</code>会相互协作，既美化我们的代码，也修复我们质量不过关的代码。然而现实总是不那么完美，我们会发现某些时候，<code>eslint</code>提示错误，我们修改了以后，屏幕会闪一下然后又恢复到报错状态，自动修复失效了</li> <li>这是因为eslint 有一部分负责美化代码的规则和 <code>prettier</code>的规则冲突了， 用 <code>eslint-config-prettier</code> 提供的规则集来覆盖掉eslint冲突的规则，并用<code>eslint-plugin-prettier</code>来使eslint使用<code>prettier</code>的规则来美化代码。</li></ul> <div class="language-js extra-class"><pre class="language-js"><code>yarn add eslint<span class="token operator">-</span>config<span class="token operator">-</span>prettier eslint<span class="token operator">-</span>plugin<span class="token operator">-</span>prettier <span class="token operator">-</span><span class="token constant">D</span>
+</code></pre></div><ul><li>然后在 .eslintrc.json中extends的最后添加一个配置:</li></ul> <div class="language-js extra-class"><pre class="language-js"><code>  <span class="token string">&quot;extends&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token string">&quot;eslint:recommended&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;plugin:vue/vue3-recommended&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;plugin:@typescript-eslint/recommended&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;plugin:prettier/recommended&quot;</span> <span class="token comment">// 新增，必须放在最后面</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+</code></pre></div><p>然后我们重启一下vscode，就会发现冲突消失了，我们的自动修复和自动格式化也能相互协作了</p> <h2 id="六-配置-husky-lint-staged"><a href="#六-配置-husky-lint-staged" class="header-anchor">#</a> 六. 配置 <code>husky</code>+ <code>lint-staged</code></h2> <p>理论上，到上一步我们已经能使得我们的项目获得不错的开发规范约束了。然而仍然有可以改进的地方：</p> <ul><li>如果是在项目中途才接入<code>eslint + prettier``,如果对原来的代码使用</code>yarn run lint<code>或者</code>yarn run format`势必会带来大范围地改动，甚至会造成冲突。</li> <li>对于一些不使用<code>vscode</code>编辑器，或者没有安装<code>prettier</code>和<code>eslint</code>插件的用户而言，他们不能享受到插件带来的协助，而他们的代码自然大概率是不符合规范的，不该被提交到代码库。</li></ul> <p>基于上述的顾虑，社区提供了 <code>husky</code> + <code>lint-staged</code>的渐进式方案。 <code>lint-staged</code> 是一个只检测<code>git</code>暂存区的<code>lint</code>工具，<code>husky</code>是一个用来给我们的项目添加<code>git hook</code>的工具，<code>git hook</code>是进行<code>git</code>操作会触发的脚本，例如：提交的时候会触发<code>pre-commit</code>钩子,输入提交信息会触发<code>commit-msg</code>钩子。 我们用<code>husky</code>安装<code>pre-commit</code>钩子，我们就可以在进行<code>git commit</code>操作的时候，运行我们的脚本来检测待提交的代码是否规范，便可以只对暂存区的文件进行检查</p> <div class="language-json extra-class"><pre class="language-json"><code>yarn add husky lint-staged -D
+</code></pre></div><ul><li>添加一个在<code>package.json</code>中添加一条<code>preinstall</code>脚本</li></ul> <div class="language-js extra-class"><pre class="language-js"><code><span class="token punctuation">{</span>
+    <span class="token string">&quot;script&quot;</span><span class="token operator">:</span><span class="token punctuation">{</span>
+        <span class="token string">&quot;prepare&quot;</span><span class="token operator">:</span> <span class="token string">&quot;husky install&quot;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span> 
+</code></pre></div><ul><li>prepare脚本会在 <code>yarn install</code> 之后自动运行，这样依赖你的小伙伴<code>clone</code>了你的项目之后会自动安装<code>husky</code>,这里由于我们已经运行过 <code>yarn install</code> 了，所以我们需要手动运行一次<code>yarn run prepare</code>,然后我们就会得到一个目录<code>.husky</code>。</li> <li>接下来我们为我们git仓库添加一个<code>pre-commit</code>钩子,运行</li></ul> <div class="language-js extra-class"><pre class="language-js"><code><span class="token punctuation">{</span>
+   npx husky add <span class="token punctuation">.</span>husky<span class="token operator">/</span>pre<span class="token operator">-</span>commit <span class="token string">&quot;npx --no-install lint-staged&quot;</span>
+<span class="token punctuation">}</span> 
+</code></pre></div><ul><li>这回在我们的<code>.husky</code>目录下生成一个pre-commit的脚本</li></ul> <div class="language-js extra-class"><pre class="language-js"><code><span class="token hashbang comment">#!/bin/sh </span>
+<span class="token punctuation">.</span> <span class="token string">&quot;$(dirname &quot;</span>$<span class="token number">0</span><span class="token string">&quot;)/_/husky.sh&quot;</span>
+
+npx <span class="token operator">--</span>no<span class="token operator">-</span>install lint<span class="token operator">-</span>staged
+</code></pre></div><ul><li>接下来我们配置<code>lint-staged</code>,在<code>package.json</code>中添加下面的配置信息。</li></ul> <div class="language-js extra-class"><pre class="language-js"><code><span class="token punctuation">{</span>
+  <span class="token string">&quot;lint-staged&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;*.{js,vue,ts,jsx,tsx}&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token string">&quot;prettier --write&quot;</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;eslint --fix&quot;</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;*.{html,css,less,scss,md}&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token string">&quot;prettier --write&quot;</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>这样之后，我们后续提交到暂存区的代码也就会被<code>eslint+</code>prettier``格式化和检查，进一步保证我们的代码规范</p> <h2 id="七-配置文件总览"><a href="#七-配置文件总览" class="header-anchor">#</a> 七. 配置文件总览</h2> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// package.json</span>
+<span class="token punctuation">{</span>
+  <span class="token string">&quot;name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;my-vue-app&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;version&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.0.0&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;scripts&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;dev&quot;</span><span class="token operator">:</span> <span class="token string">&quot;vite&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;build&quot;</span><span class="token operator">:</span> <span class="token string">&quot;vue-tsc --noEmit &amp;&amp; vite build&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;preview&quot;</span><span class="token operator">:</span> <span class="token string">&quot;vite preview&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;lint&quot;</span><span class="token operator">:</span> <span class="token string">&quot;eslint . --ext .vue,.js,.ts,.jsx,.tsx --fix&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;format&quot;</span><span class="token operator">:</span> <span class="token string">&quot;prettier --write ./**/*.{vue,ts,tsx,js,jsx,css,less,scss,json,md}&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;prepare&quot;</span><span class="token operator">:</span> <span class="token string">&quot;husky install&quot;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;dependencies&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;vue&quot;</span><span class="token operator">:</span> <span class="token string">&quot;^3.2.25&quot;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;devDependencies&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;@typescript-eslint/eslint-plugin&quot;</span><span class="token operator">:</span> <span class="token string">&quot;^5.7.0&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;@typescript-eslint/parser&quot;</span><span class="token operator">:</span> <span class="token string">&quot;^5.7.0&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;@vitejs/plugin-vue&quot;</span><span class="token operator">:</span> <span class="token string">&quot;^2.0.0&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;eslint&quot;</span><span class="token operator">:</span> <span class="token string">&quot;^8.4.1&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;eslint-config-prettier&quot;</span><span class="token operator">:</span> <span class="token string">&quot;^8.3.0&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;eslint-plugin-prettier&quot;</span><span class="token operator">:</span> <span class="token string">&quot;^4.0.0&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;eslint-plugin-vue&quot;</span><span class="token operator">:</span> <span class="token string">&quot;^8.2.0&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;husky&quot;</span><span class="token operator">:</span> <span class="token string">&quot;^7.0.4&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;lint-staged&quot;</span><span class="token operator">:</span> <span class="token string">&quot;^12.1.3&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;prettier&quot;</span><span class="token operator">:</span> <span class="token string">&quot;^2.5.1&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;typescript&quot;</span><span class="token operator">:</span> <span class="token string">&quot;^4.4.4&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;vite&quot;</span><span class="token operator">:</span> <span class="token string">&quot;^2.7.2&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;vue-tsc&quot;</span><span class="token operator">:</span> <span class="token string">&quot;^0.29.8&quot;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;lint-staged&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;*.{js,vue,ts,jsx,tsx}&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token string">&quot;prettier --write&quot;</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;eslint --fix&quot;</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;*.{html,css,less,scss,md}&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token string">&quot;prettier --write&quot;</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// .eslintrc.json</span>
+<span class="token punctuation">{</span>
+  <span class="token string">&quot;env&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;browser&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;es2021&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;node&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;vue/setup-compiler-macros&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;extends&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token string">&quot;eslint:recommended&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;plugin:vue/vue3-recommended&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;plugin:@typescript-eslint/recommended&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;plugin:prettier/recommended&quot;</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;parser&quot;</span><span class="token operator">:</span> <span class="token string">&quot;vue-eslint-parser&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;parserOptions&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;ecmaVersion&quot;</span><span class="token operator">:</span> <span class="token string">&quot;latest&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;parser&quot;</span><span class="token operator">:</span> <span class="token string">&quot;@typescript-eslint/parser&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;sourceType&quot;</span><span class="token operator">:</span> <span class="token string">&quot;module&quot;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;plugins&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">&quot;vue&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;@typescript-eslint&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;rules&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// .prettierrc.js</span>
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  printWidth<span class="token operator">:</span> <span class="token number">80</span><span class="token punctuation">,</span> <span class="token comment">//单行长度</span>
+  tabWidth<span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token comment">//缩进长度</span>
+  useTabs<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token comment">//使用空格代替tab缩进</span>
+  semi<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token comment">//句末使用分号</span>
+  singleQuote<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token comment">//使用单引号</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">// .vscode/settings.json</span>
+<span class="token punctuation">{</span>
+  <span class="token string">&quot;editor.formatOnSave&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;editor.defaultFormatter&quot;</span><span class="token operator">:</span> <span class="token string">&quot;esbenp.prettier-vscode&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;editor.codeActionsOnSave&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;source.fixAll&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// .husky/pre-commit</span>
+#<span class="token operator">!</span><span class="token operator">/</span>bin<span class="token operator">/</span>sh
+<span class="token punctuation">.</span> <span class="token string">&quot;$(dirname &quot;</span>$<span class="token number">0</span><span class="token string">&quot;)/_/husky.sh&quot;</span>
+
+npx <span class="token operator">--</span>no<span class="token operator">-</span>install lint<span class="token operator">-</span>staged
+</code></pre></div><h2 id="八-总结"><a href="#八-总结" class="header-anchor">#</a> 八. 总结</h2> <p>本文从实战出发,抱着一个边学习边分享的态度，为一个 vite-vue3-ts 项目添加了eslint + prettier + husky + lint-staged项目规范，希望大家能从中学到知识。代码已经上传到 <strong><a href="https://github.com/aBigFace/program-schema-code-vue3" target="_blank" rel="noopener noreferrer">github<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></strong> 上,点击这里即可查看。</p></div></section> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev"><a href="/edacCodeConstraints/handbook/git/git-connect-ssh.html" class="prev">
+            电脑SSH配置
+          </a></span> <span class="next"><a href="/edacCodeConstraints/handbook/shema/code/interface-shema.html">
+            前端统一接口
+          </a></span></p></div> <div class="comments-wrapper"><!----></div> <ul class="side-bar sub-sidebar-wrapper" style="width:12rem;" data-v-cb1513f6><li class="level-2" data-v-cb1513f6><a href="/edacCodeConstraints/handbook/shema/code/code-format.html#一-初始化项目" class="sidebar-link reco-side-一-初始化项目" data-v-cb1513f6>一. 初始化项目</a></li><li class="level-2" data-v-cb1513f6><a href="/edacCodeConstraints/handbook/shema/code/code-format.html#二-集成eslint" class="sidebar-link reco-side-二-集成eslint" data-v-cb1513f6>二. 集成Eslint</a></li><li class="level-2" data-v-cb1513f6><a href="/edacCodeConstraints/handbook/shema/code/code-format.html#三-添加vscode-eslint-插件" class="sidebar-link reco-side-三-添加vscode-eslint-插件" data-v-cb1513f6>三. 添加vscode-eslint 插件</a></li><li class="level-2" data-v-cb1513f6><a href="/edacCodeConstraints/handbook/shema/code/code-format.html#四-集成-prettier" class="sidebar-link reco-side-四-集成-prettier" data-v-cb1513f6>四. 集成 prettier</a></li><li class="level-2" data-v-cb1513f6><a href="/edacCodeConstraints/handbook/shema/code/code-format.html#五-解决-eslint-和-prettier-的冲突" class="sidebar-link reco-side-五-解决-eslint-和-prettier-的冲突" data-v-cb1513f6>五. 解决 eslint 和 prettier 的冲突</a></li><li class="level-2" data-v-cb1513f6><a href="/edacCodeConstraints/handbook/shema/code/code-format.html#六-配置-husky-lint-staged" class="sidebar-link reco-side-六-配置-husky-lint-staged" data-v-cb1513f6>六. 配置 husky + lint-staged</a></li><li class="level-2" data-v-cb1513f6><a href="/edacCodeConstraints/handbook/shema/code/code-format.html#七-配置文件总览" class="sidebar-link reco-side-七-配置文件总览" data-v-cb1513f6>七. 配置文件总览</a></li><li class="level-2" data-v-cb1513f6><a href="/edacCodeConstraints/handbook/shema/code/code-format.html#八-总结" class="sidebar-link reco-side-八-总结" data-v-cb1513f6>八. 总结</a></li></ul></main> <!----></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-c6073ba8 data-v-c6073ba8><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-c6073ba8><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-c6073ba8></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-c6073ba8></path></svg></div></div></div>
+    <script src="/edacCodeConstraints/assets/js/app.27ff7118.js" defer></script><script src="/edacCodeConstraints/assets/js/3.4a7c7b9d.js" defer></script><script src="/edacCodeConstraints/assets/js/1.1c2defac.js" defer></script><script src="/edacCodeConstraints/assets/js/8.e7a47841.js" defer></script>
+  </body>
+</html>
