@@ -1,6 +1,6 @@
 module.exports = {
-    title: 'TypeScript4 文档',
-    description: 'TypeScript4 最新官方文档翻译',
+    title: 'Work Doc · LuoRunfeng',
+    description: '分享一些前端开发心得，前端最新技术栈，以及项目开发的约束',
     base: '/edacCodeConstraints/',
     theme: 'reco',
     locales: {
@@ -14,41 +14,47 @@ module.exports = {
         nav: [
             { text: '首页', link: '/' },
             {
-                text: '冴羽的 JavaScript 博客',
+                text: ' MarkDown',
                 items: [
-                    { text: 'Github', link: 'https://github.com/mqyqingfeng' },
-                    { text: '掘金', link: 'https://juejin.cn/user/712139234359182/posts' }
+                    { text: '在线编辑', link: 'https://markdown.com.cn/editor/' },
+                    { text: '语法速查', link: 'https://markdown.com.cn/cheat-sheet.html' }
                 ]
             }
         ],
         sidebar: [{
-                title: '欢迎学习',
+                title: 'Git配置',
                 path: '/',
                 collapsable: false, // 不折叠
                 children: [{
-                        title: "学前必读",
-                        path: "/",
-                        children: [{
-                            title: '学前必读-1',
-                            path: '/handbook/learn-read-1',
-                        }, {
-                            title: '学前必读-2',
-                            path: '/handbook/learn-read-2',
-                        }]
-                    },
-                    {
-                        title: "学前必读-1",
-                        path: "/handbook/read-1"
-                    },
-                ]
+                    title: "电脑SSH配置",
+                    path: "/handbook/git/git-connect-ssh",
+                }, ]
             },
             {
-                title: "基础学习",
-                path: '/handbook/ConditionalTypes',
+                title: "代码规范",
                 collapsable: false, // 不折叠
                 children: [
-                    { title: "条件类型", path: "/handbook/ConditionalTypes" },
-                    { title: "泛型", path: "/handbook/Generics" }
+                    { title: "前端代码格式", 
+                    path: "/handbook/shema/code/code-format" },
+                    { title: "前端统一接口", path: "/handbook/shema/code/interface-shema" }
+                ],
+            },
+            {
+                title: "命名规范",
+                collapsable: false, // 不折叠
+                children: [
+                    { title: "文件名命名", 
+                    path: "/handbook/shema/name/file-name-schema" },
+                    { title: "文件夹命名",
+                     path: "/handbook/shema/name/dir-name-schema" }
+                ],
+            },
+            {
+                title: "性能优化",
+                collapsable: false, // 不折叠
+                children: [
+                    { title: "组件库引入方式", 
+                    path: "/handbook/shema/performance/component-import-method" },
                 ],
             }
         ]
